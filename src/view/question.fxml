@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.Question"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuestionController">
+    <children>
+        <HBox VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <children>
+                <Button mnemonicParsing="false" onAction="#back" text="Zurück" />
+            </children>
+        </HBox>
+        <Label fx:id="questionTxt" VBox.vgrow="ALWAYS">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <HBox VBox.vgrow="ALWAYS">
+            <children>
+                <GridPane hgap="25.0" vgap="25.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" prefWidth="200.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" prefWidth="200.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+                        <RowConstraints prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+                    </rowConstraints>
+                    <children>
+                        <Button fx:id="answer1Btn" mnemonicParsing="false" onAction="#checkAns1" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="answer2Btn" mnemonicParsing="false" onAction="#checkAns2" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="answer3Btn" mnemonicParsing="false" onAction="#checkAns3" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="answer4Btn" mnemonicParsing="false" onAction="#checkAns4" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                    </children>
+                </GridPane>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</VBox>
