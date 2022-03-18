@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.MenuController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox alignment="TOP_RIGHT" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Willkommen zu CyberLearn!" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label text="Wähle ein Thema aus um zu beginnen!">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <ListView fx:id="topicList" onEditStart="#selectTopic" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" VBox.vgrow="ALWAYS">
+         <children>
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#selectTopic" text="Weiter" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" />
+   </padding>
+</VBox>
