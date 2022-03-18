@@ -14,7 +14,7 @@ public class PracticeController {
 
     public void questionCatalog()
     {
-        QuestionCatalogController.show(PracticeController.stage);
+        TopicController.show(PracticeController.stage, TopicController.topic);
     }
 
     public void exam()
